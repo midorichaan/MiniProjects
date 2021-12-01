@@ -15,7 +15,7 @@ def run():
 
     while is_playing == True:
         try:
-            i = input("Enter the number [{count}] (000 〜 999) > ")
+            i = input(f"Enter the number [{count}] (000 〜 999) > ")
         except:
             is_playing = False
         
