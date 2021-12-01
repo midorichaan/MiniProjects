@@ -47,8 +47,7 @@ def run():
     is_playing = True
     
     while is_playing == True:
-        
-        
+        is_playing = False
         
 if __name__ == "__main__":
     try:
