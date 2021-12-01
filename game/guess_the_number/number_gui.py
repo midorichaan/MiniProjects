@@ -17,7 +17,7 @@ def generate_number():
 def setup_root():
     global root, box, button
     root.title(u"Guess The Number")
-    root.geometry("400×150")
+    root.geometry("400x300")
     
     label = tkinter.Label(
         text=u"Enter the number (000 - 999)", 
