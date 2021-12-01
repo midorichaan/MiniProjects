@@ -1,6 +1,7 @@
 import random
 import sys
 import tkinter
+import tkinter.font as font
 
 root = tkinter.Tk()
 box = None
@@ -8,7 +9,7 @@ number = 0
 button = None
 is_playing = False
 count = 0
-font = tkinter.font.Font(root, family="./mushin.otf", size=20, weight="bold")
+font = font.Font(root, family="./mushin.otf", size=20, weight="bold")
 
 def generate_number():
     return random.randint(000, 999)
