@@ -9,7 +9,7 @@ number = 0
 button = None
 is_playing = False
 count = 0
-font = font.Font(root, family="./mushin.otf", size=20, weight="bold")
+font = font.Font(root, family="./mushin.otf", size=20)
 
 def generate_number():
     return random.randint(000, 999)
