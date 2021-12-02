@@ -16,7 +16,7 @@ def generate_number():
     return random.randint(000, 999)
 
 def setup_root():
-    global root, box, button
+    global root, box, button, count, label
     root.title(u"Guess The Number")
     root.geometry("400x150")
     
