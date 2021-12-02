@@ -7,6 +7,7 @@ root = tkinter.Tk()
 box = None
 number = 0
 button = None
+label = None
 is_playing = False
 count = 0
 font = font.Font(root, family="./mushin.otf", size=20)
@@ -20,7 +21,7 @@ def setup_root():
     root.geometry("400x150")
     
     label = tkinter.Label(
-        text=u"Enter the number (000 - 999)", 
+        text=u"Enter the number (000 - 999) [{}]".format(count), 
         font=font
     )
     label.place(
@@ -28,11 +29,10 @@ def setup_root():
         y=20
     )
     
-    box = tkinter.Entry()
+    box = tkinter.Entry(width=10)
     box.place(
-        width=4, 
-        x=120, 
-        y=60
+        x=110, 
+        y=55
     )
     
     button = tkinter.Button(
