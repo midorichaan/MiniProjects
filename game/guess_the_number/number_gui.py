@@ -123,7 +123,6 @@ if __name__ == "__main__":
     try:
         setup_root()
         number = generate_number()
-        print(number)
         root.mainloop()
     except Exception as exc:
         root.quit()
