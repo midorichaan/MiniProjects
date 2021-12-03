@@ -18,6 +18,20 @@ close = None
 def generate_number():
     return random.randint(000, 999)
 
+def end_game():
+    box.place_forget()
+    label.place_forget()
+    box.place_forget()
+    button.place_forget()
+
+    hint["text"] = u"正解！ \n答えは{}だよ！".format(number)
+    hint["font"] = ("無心", 20)
+    hint.pack()
+    counter.pack()
+    close.pack()
+    #hint.place(x=140, y=40)
+    #counter.place(x=110, y=70)
+
 def on_button_click():
     global count, counter
 
@@ -35,11 +49,16 @@ def on_button_click():
 
     if n > number:
         print("lower")
+        hint["text"] = u"{}より下".format(n)
+        hint.place(x=300, y=70)
     elif n < number:
         print("higher")
+        hint["text"] = u"{}より上".format(n)
+        hint.place(x=300, y=70)
     else:
         print("collect")
         print(f"The answer is {number} (trying {count} times)")
+        end_game()
 
 def setup_root():
     global root, box, button, label, close, counter, hint
@@ -65,11 +84,11 @@ def setup_root():
     )
     
     hint = tkinter.Label(
-        text=u"debug",
-        font=font
+        text=u"   ",
+        font=("無心", 15)
     )
     hint.place(
-        x=180,
+        x=300,
         y=70
     )
 
@@ -104,6 +123,7 @@ if __name__ == "__main__":
     try:
         setup_root()
         number = generate_number()
+        print(number)
         root.mainloop()
     except Exception as exc:
         root.quit()
